@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .counter-container {
+        background: #ffffff;
+        padding: 20px 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    
+    h1 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+    
+    .counter-display {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: #007bff;
+    }
+    
+    .button-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .btn:hover {
+        background-color: #0056b3;
+    }
+    
+    #decrement {
+        background-color: #dc3545;
+    }
+    
+    #decrement:hover {
+        background-color: #a71d2a;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="counter-container">
+        <h1>Counter</h1>
+        <div class="counter-display" id="counter">0</div>
+        <div class="button-container">
+            <button id="decrement" class="btn">Decrement</button>
+            <button id="increment" class="btn">Increment</button>
+        </div>
+    </div>
+    <script>
+        let counter = 0;
+
+const counterDisplay = document.getElementById('counter');
+const incrementButton = document.getElementById('increment');
+const decrementButton = document.getElementById('decrement');
+
+// Increment the counter
+incrementButton.addEventListener('click', () => {
+    counter++;
+    updateCounter();
+});
+
+// Decrement the counter
+decrementButton.addEventListener('click', () => {
+    counter--;
+    updateCounter();
+});
+
+// Update the counter display
+function updateCounter() {
+    counterDisplay.textContent = counter;
+}
+    </script>
+</body>
+</html>
